@@ -1,0 +1,254 @@
+/* ── RESET ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── VARIABLES ──────────────────────────────────────── */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --red: #d62828;
+  --gray-mid: #1a1a1a;
+  --gray-border: #2a2a2a;
+  --text-muted: #888888;
+}
+
+/* ── BASE ───────────────────────────────────────────── */
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAV ────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 377px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+nav .nav-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+nav span {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 3px;
+  color: var(--white);
+}
+
+nav ul {
+  display: flex;
+  gap: 42px;
+  list-style: none;
+}
+
+nav ul a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+nav ul a:hover {
+  color: var(--white);
+}
+
+nav ul li:first-child a {
+  color: var(--red);
+}
+
+/* ── HOME SECTION ───────────────────────────────────── */
+#home {
+  padding-top: 86px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── HERO ───────────────────────────────────────────── */
+#home > div:first-of-type {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 377px 80px;
+  overflow: hidden;
+}
+
+/* Tag line above heading */
+#home > div:first-of-type > p:first-of-type {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#home > div:first-of-type > p:first-of-type::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--red);
+}
+
+/* Main heading */
+#home > div:first-of-type h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.92;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+/* Subtext */
+#home > div:first-of-type > p:nth-of-type(2) {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 340px;
+  margin-bottom: 40px;
+}
+
+#home > div:first-of-type > p:nth-of-type(2) em {
+  font-style: normal;
+  color: var(--red);
+  font-weight: 400;
+}
+
+/* CTA buttons */
+#home > div:first-of-type a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 36px;
+  transition: all 0.2s;
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+
+#home > div:first-of-type a:first-of-type {
+  background: var(--red);
+  color: var(--white);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+#home > div:first-of-type a:first-of-type:hover {
+  background: #ff2020;
+  transform: translateY(-2px);
+}
+
+#home > div:first-of-type a:last-of-type {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--gray-border);
+}
+
+#home > div:first-of-type a:last-of-type:hover {
+  border-color: var(--white);
+}
+
+/* Hero image */
+.container {
+  position: absolute;
+  top: 86px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gym_image {
+  position: absolute;
+  bottom: 0;
+  left: 217px;
+  right: 217px;
+  width: calc(100% - 434px);
+  height: 82vh;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(1.1);
+  mask-image: linear-gradient(to top, transparent 0%, black 20%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 20%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── STATS STRIP ────────────────────────────────────── */
+#home > div:last-of-type {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--gray-border);
+  padding: 0 377px;
+}
+
+#home > div:last-of-type > div {
+  padding: 40px 24px;
+  border-right: 1px solid var(--gray-border);
+}
+
+#home > div:last-of-type > div:last-child {
+  border-right: none;
+}
+
+#home > div:last-of-type strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: var(--white);
+  display: block;
+  line-height: 1;
+}
+
+#home > div:last-of-type p {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 6px;
+}

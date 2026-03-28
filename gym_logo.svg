@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 28 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <defs>
+        <filter id="white-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="0.4" result="expanded"/>
+            <feFlood flood-color="white" flood-opacity="1" result="color"/>
+            <feComposite in="color" in2="expanded" operator="in" result="outline"/>
+            <feMerge>
+                <feMergeNode in="outline"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g transform="matrix(1,0,0,1,-29.090275,-41.162072)">
+        <g transform="matrix(0.956392,0,0,0.956392,-0.742193,-8.613082)">
+            <path d="M31.245,66.675L31.245,52.265L38.542,52.265L38.542,66.675L38.543,66.825C38.623,70.774 41.854,73.955 45.822,73.955C49.79,73.955 53.021,70.774 53.102,66.825L53.102,52.265L60.399,52.265L60.399,66.675C60.399,74.72 53.868,81.252 45.822,81.252C37.777,81.252 31.245,74.72 31.245,66.675Z" style="fill:#333333;stroke:none;"/>
+        </g>
+        <g transform="matrix(-0.956392,0,0,-0.956392,86.905689,128.708662)">
+            <path d="M31.245,66.675L31.245,52.265L38.542,52.265L38.542,66.675L38.543,66.825C38.623,70.774 41.854,73.955 45.822,73.955C49.79,73.955 53.021,70.774 53.102,66.825L53.102,52.265L60.399,52.265L60.399,66.675C60.399,74.72 53.868,81.252 45.822,81.252C37.777,81.252 31.245,74.72 31.245,66.675Z" style="fill:rgb(214,40,40);"/>
+        </g>
+    </g>
+</svg>
